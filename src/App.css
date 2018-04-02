@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+.App {
+  text-align: center;
+  background-color: #36474f;
+  display: flex;
+  width: 100%;
+  min-width:100vw;
+height: 100%;
+min-height: 100vh;
+	font-family: Roboto;
+  font-weight: light;
+  align-content: center;
+}
+.View {
+  margin: 0 auto;
+  margin-top:45px;
+  width: 100vw;
+  align-content: center;
+  justify-content: center;
+}
+.Header {
+display: block;
+  order: 1;
+  height: 30px;
+  position: absolute;
+  width: 100%;
+    background-color: #161f24;
+    color: white;
+    margin-bottom: 55px;
+    padding-top: 1em;
+}
+
+.edit-button {
+  border-radius: 4px;
+	background-color: #263238;
+  	color: #b0bec5;
+  flex-direction: row;
+  float:right;
+  border: 0px solid black;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-top: -26px;
+  margin-right: 20px;
+}
+ .save-button {
+  border-radius: 4px;
+	background-color: #263238;
+  	color: #b0bec5;
+  flex-direction: row;
+  float:right;
+  border: 0px solid black;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-top: -26px;
+  margin-right: 20px;
+}
+ .close-button {
+content: 'X';
+float: left;
+width: 18px;
+height: 18px;
+
+}
+.emptyHome {
+  background-color: #36474f;
+  width: 100vw;
+height: 91vh;
+}
+.emptyHome .icon {
+  background-image: url('./images/empty-state.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+  height: 400px;
+  margin: 0 auto;
+}
+.emptyHome .text{
+  margin: 0 auto;
+	color: #7dcbc4;
+  margin-top: -78px;
+}
+
+/* ============================= BUTTON ======================== */
+button.add-button {
+  position: absolute;
+  right: 6px;
+  bottom: 13px;
+	width: 80px;
+	height: 80px;
+  background: transparent;
+  justify-content: flex-end;
+  align-self: flex-end;
+  background-image: url('./images/add-tile.png');
+  background-repeat: no-repeat;
+  flex-direction: row;
+  padding: 2em;
+  z-index: 2;
+  border: 0px;
+  margin-top: -10px;
+  margin-right: 10px;
+}
+button.add-button:hover {
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  background-image: url('./images/fab.png');
+  background-repeat: no-repeat;
+  padding: 2em;
+  margin-right: 8px;
+  margin-top: -8px;
+}
+button.add-button-tile {
+	width: 80px;
+	height: 80px;
+  background: transparent;
+  background-image: url('./images/add-tile.png');
+  background-repeat: no-repeat;
+  flex-direction: row;
+  border: 0px;
+  margin-bottom: 15px;
+}
+/* ============================= CREATE TILE ======================== */
+.Background {
+  width: 100vw;
+  height: 106vh;
+  padding-top: 18%;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-top: -41vh;
+}
+.CreateTile {
+  margin: 0 auto;
+  margin-top: 12%;
+  width: 40vw;
+  height: 60vh;
+  border-radius: 4px;
+  background-color: #cfd8dc;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 600px;
+}
+.CreateTile .search-bar {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  width:100%;
+  height: 50px;
+  background-color: #19a69a;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+.CreateTile .search-bar input.searchBar {
+  margin-top: 12px;
+  width:80%;
+  height: 20px;
+  background-color: #19a69a;
+  border: none;
+  border-width: 0px;
+  border-color: none;
+  border-style: none;
+  border-image: none;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 1em;
+  color: white;
+  text-decoration: none;
+}
+.CreateTile .search-bar .search-icon{
+  margin-left: 4%;
+  justify-content: flex-start;
+  margin-top: -20px;
+  order:1;
+  z-index: -1;
+  width: 15px;
+  height: 15px;
+  background-image: url('./images/search-asset.png');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  align-content: flex-start;
+}
+.CreateTile .fiveResults {
+  margin-top:-15px;
+}
+.CreateTile .fiveResults p {
+  background-color: #ffffff;
+  border-bottom: 1px solid  #cfd8dc;
+  height: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0;
+  justify-content: space-around;
+  align-content: center;
+
+}
+
+.fiveResults p:hover {
+  cursor: pointer;
+}
+
+
+/* ============================= WEATHER TILE ======================== */
+.AllTiles {
+  display: flex;
+  flex-direction: row;
+  border-radius: 4px;
+  flex-wrap: wrap;
+  max-width: 850px;
+  margin: 0 auto;
+}
+.AllTiles .tile {
+  width: 28%;
+  height: 25%;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #ffffff;
+  min-width: 236px;
+  max-width: 280px;
+  height: 230px;
+  position: relative;
+}
+.AllTiles .tile-to-add {
+  width: 28%;
+  height: 25%;
+  border: dashed 1px #77909d;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #5f7d8c;
+  min-width: 236px;
+  max-width: 280px;
+  height: 230px;
+	font-size: 13px;
+	letter-spacing: 2px;
+}
+.AllTiles .tile .tileContent {
+  width: 100%;
+  height: 100%;
+}
+.AllTiles .tile .deleteButton{
+  background-image: url('./images/delete.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 25px;
+  height: 25px;
+  z-index:1;
+  position: absolute;
+  top: -6px;
+  right: -9px;
+}
+.AllTiles .tile .title {
+  flex-wrap: nowrap;
+  text-align: center;
+  margin-top: 7px;
+}
+.AllTiles .tile .title span {
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: 100;
+  letter-spacing: 1.6px;
+  text-align: center;
+  color: #ffffff;
+  flex-direction: column;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  flex-wrap: nowrap;
+}
+.AllTiles .tile .icon {
+  margin: 0 auto;
+  flex: 5;
+  flex-direction: column;
+  background-size: 19%;
+  margin-top: 14px;
+}
+.AllTiles .tile .main-temp {
+  font-size: 35px;
+  flex: 4;
+}
+.AllTiles .tile .temp {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex: 2;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 10px;
+  margin: 0 auto;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.AllTiles .tile .temp .numbersTemp{
+  font-size: 12px;
+}
+/* ============================= ONE WEATHER TILE ======================== */
+.OneTile {
+  width: 100vw;
+  height: 100vh;
+  color: #ffffff;
+}
+
+.OneTile .one-tile-container {
+  display: flex;
+  flex-direction: column;
+}
+.OneTile .title {
+  font-size: 11px;
+  font-weight: 400;
+  padding: 1.25em;
+}
+.OneTile .row {
+  display: flex;
+  flex:1;
+  margin-top: 30px;
+}
+.OneTile .todayDetails {
+  display: flex;
+  flex-direction: column;
+  flex:2;
+}
+.OneTile .row .todaySummary {
+  width: 50%;
+  max-width: 600px;
+  min-width: 200px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+.OneTile .todaySummary .icon {
+  width: 25%;
+  min-width: 80px;
+  min-height: 100px;
+  max-width: 90px;
+  margin: 0 auto;
+  align-content: center;
+  flex-direction: row;
+  order:1;
+  background-size: 80%;
+}
+.OneTile .row .todaySummary .info {
+  width:50%;
+  min-width: 80px;
+  order: 2;
+  flex-direction: row;
+  font-size: 10px;
+  font-weight: 100px;
+}
+.OneTile .todaySummary .info .main-temp{
+  font-size: 50px;
+  margin-top:0.25em;
+}
+.oneTile .todaySummary .info .details {
+  max-width: 100px;
+}
+.OneTile .weekSummary {
+  width:50%;
+  min-width: 500px;
+  order: 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.OneTile .row .weekSummary .day {
+  flex-direction: column;
+  width: 30%;
+  height: 50%;
+  min-width: 50px;
+  min-height: 50px;
+}
+.OneTile .row .weekSummary .day .title {
+  font-size: 10px;
+  padding-bottom: 1em;
+}
+.OneTile .row .weekSummary .day {
+  background: transparent;
+}
+.OneTile .row .weekSummary .day .icon{
+  width: 22%;
+  height: 38%;
+  min-width: 20px;
+  min-height: 36px;
+  background-size: 50%;
+  margin: 0 auto;
+}
+.OneTile .row .temp {
+  padding-top: 1em;
+  font-size: 10px;
+  margin: 0 auto;
+  width: 60px;
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.OneTile .todayDetails {
+  background-color: rgba(255, 255, 255, 0.15);
+    font-size: 8px;
+}
+.OneTile .todayDetails .row{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.OneTile .todayDetails .title{
+    flex-direction: row;
+
+}
+.OneTile .todayDetails .row .hour {
+  width: 20%;
+  min-height: 100px;
+}
+
+.OneTile .todayDetails .hour .temp-bar {
+  margin-top: 10px;
+  height: 10px;
+  border-radius: 0px;
+}
+.OneTile  .hour .temp-bar .clear-day,
+.OneTile  .hour .temp-bar .clear-night {
+  margin-top: 10px;
+  height: 10px;
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+  .OneTile .hour .temp-bar .partly-cloudy-day,
+  .OneTile .hour .temp-bar .partly-cloudy-night {
+    margin-top: 10px;
+    height: 10px;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+    .OneTile .hour .temp-bar .cloudy {
+      margin-top: 10px;
+      height: 10px;
+      border-radius: 0px;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+      .OneTile .hour .temp-bar .rain {
+        margin-top: 10px;
+        height: 10px;
+        border-radius: 0px;
+          background-color: rgba(0, 0, 0, 0.5);
+      }
+        .OneTile .hour .temp-bar {
+          margin-top: 10px;
+          height: 10px;
+          border-radius: 0px;
+        }
+.bottom-footer {
+  width: 100%;
+  height: 30vw;
+  z-index: -2;
+  margin-bottom: -50px;
+}
+/* ============================= WEATHER ICONS ======================== */
+.clear-day {
+  background-color: #f77f00;
+  border-radius: 4px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.day .clear-day {
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.clear-day .icon {
+  background-image: url('./images/weather-asset-sun.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cloudy-day, .cloudy {
+	background-color: #8fa4af;
+  border-radius: 4px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.day .cloudy-day, .day .cloudy {
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cloudy-day .icon,
+.cloudy .icon {
+  background-image: url('./images/weather-asset-cloud.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.day .partly-cloudy-day {
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.partly-cloudy-day {
+  border-radius: 4px;
+  background-color: #ecd428;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.partly-cloudy-day .icon {
+  background-image: url('./images/weather-asset-partial-cloud.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.partical-cloud {
+  border-radius: 4px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.partical-cloud .icon {
+  background-image: url('./images/weather-asset-partial-cloud.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.rain {
+	background-color: #537cd7;
+  border-radius: 4px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.day .rain {
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.rain .icon {
+  background-image: url('./images/weather-asset-rain.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.light-rain {
+  border-radius: 4px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.light-rain .icon {
+  background-image: url('./images/weather-asset-light-rain.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.day .clear-night {
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.clear-night {
+  border-radius: 4px;
+  background-color: #8fa4af;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.clear-night .icon {
+  background-image: url('./images/weather-asset-moon.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cloudy-night,
+.partly-cloudy-night {
+	background-color: #5f7d8c;
+  border-radius: 4px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.day .cloudy-night,
+.day .partly-cloudy-night  {
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cloudy-night .icon,
+.partly-cloudy-night .icon{
+  background-image: url('./images/weather-asset-partly-cloudy.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.snow .icon{
+  background-image: url('./images/weather-asset-snow.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.wind{
+  background-color: #84dbb9;
+  border-radius: 4px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.day .wind{
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wind .icon{
+  background-image: url('./images/weather-asset-wind.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
