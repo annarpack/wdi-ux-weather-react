@@ -24,25 +24,33 @@ class AllTiles extends Component {
   }
 
   delete(id) {
-    axios.delete(`https://flyhigh.herokuapp.com/${id}`)
+    axios.delete(`${this.props.baseURL}/${id}`)
     .then(
       setTimeout(this.getData, 500)
     )
   }
 
   getData() {
-    axios.get(`https://flyhigh.herokuapp.com/`)
-    .then(res => {
+    if ( this.state.allTilesPlaces === undefined) {
       this.setState({
-        allTilesPlaces: res.data.places,
-        allTilesWeather: res.data.weatherData
+        allTilesPlaces: [],
+        allTilesWeather: []
       });
-      this.props.changeEmpty(res.data.places.length === 0)
-    })
+    }
+    if (this.state.allTilesPlaces.length === 0 || this.state.allTilesPlaces.length > 0) {
+      axios.get(`${this.props.baseURL}`)
+      .then(res => {
+        this.setState({
+          allTilesPlaces: res.data.places,
+          allTilesWeather: res.data.weatherData
+        });
+        this.props.changeEmpty(res.data.places.length === 0)
+      }).catch(err => console.log("getData", err))
+    }
   }
 
   renderAllTiles() {
-    if (this.state.allTilesPlaces.length === 0) {
+    if (this.state.allTilesPlaces.length === 0 || this.state.allTilesPlaces === undefined) {
       return (
         <div className="emptyHome">
               <div className="icon"></div>

@@ -27,7 +27,7 @@ class CreateTile extends Component {
   }
 
   searchFiveResults() {
-    axios.post(`https://flyhigh.herokuapp.com//${this.state.value}`)
+    axios.post(`${this.props.baseURL}/${this.state.value}`)
     .then(res => {
       this.setState({fiveSuggestions: res.data})
     })
@@ -48,7 +48,7 @@ class CreateTile extends Component {
   }
 
   locationChoice(id) {
-    axios.get(`https://flyhigh.herokuapp.com/${this.state.value}/${id}`)
+    axios.get(`${this.props.baseURL}/${this.state.value}/${id}`)
     .then(
       setTimeout(this.props.back, 500)
     )

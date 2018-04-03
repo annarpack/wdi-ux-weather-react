@@ -17,8 +17,11 @@ class App extends Component {
       clickedid: "",
       cityclicked: "",
       stateclicked: "",
-      countryclicked: ""
+      countryclicked: "",
+      baseURL: `http://localhost:8080/api`
     }
+    //const baseURL = `http://localhost:3000/`;
+    //const baseURL = `https://flyhigh.herokuapp.com/`;
 
     this.onClickButton = this.onClickButton.bind(this);
     this.backToViewAll = this.backToViewAll.bind(this);
@@ -27,37 +30,38 @@ class App extends Component {
     this.onEditButton = this.onEditButton.bind(this);
   }
 
-  onClickButton() {
+  onClickButton(baseURL) {
     this.setState({
       mode: "Search"
     })
   }
 
-  backToViewAll(){
+  backToViewAll(baseURL){
     this.setState({
       mode: "View All"
     })
   }
 
-  onEditButton() {
+  onEditButton(baseURL) {
     this.setState({
       mode: "Edit"
     })
   }
 
-  changeEmpty(value){
+  changeEmpty(value, baseURL){
     this.setState({
       empty: value
     })
   }
 
-  oneTile(id, city, state, country) {
+  oneTile(id, city, state, country, baseURL) {
     this.setState({
       clickedid: id,
       cityclicked: city,
       stateclicked: state,
       countryclicked: country,
-      mode: "View One"
+      mode: "View One",
+      baseURL: this.state.baseURL
     })
   }
 
@@ -74,6 +78,7 @@ class App extends Component {
           stateclicked={this.state.stateclicked}
           countryclicked={this.state.countryclicked} />
         <View
+          baseURL={this.state.baseURL}
           mode={this.state.mode}
           back={this.backToViewAll}
           changeEmpty={this.changeEmpty}

@@ -17,6 +17,7 @@ class View extends Component {
   renderView() {
   if ((this.props.mode === "View All") || (this.props.mode === "Edit")) {
     return <AllTiles
+      baseURL={this.props.baseURL}
       onClickButton={this.props.onClick}
       changeEmpty={this.props.changeEmpty}
       oneTile={this.props.oneTile}
@@ -26,11 +27,13 @@ class View extends Component {
   } else if (this.props.mode === "Search") {
 
     return <CreateTile
+      baseURL={this.props.baseURL}
       back={this.props.back}/>
 
   } else if (this.props.mode === "View One") {
-
+    
     return <OneTile
+      baseURL={this.props.baseURL}
       changeEmpty={this.props.changeEmpty}
       clickedId={this.props.clickedId} />
   }
